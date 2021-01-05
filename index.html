@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>HEADER</title>
+  </head>
+  <body>
+    <header class="h-20 bg-white shadow-md text-black flex">
+      <div class="logo p-8 flex-1">
+        <h1>HEADER</h1>
+      </div>
+      <nav class="list flex-1">
+        <div
+          id="menu-icon"
+          class="h-20 flex flex-col justify-evenly sm:hidden items-end p-4"
+          onclick="toggleMenu()"
+        >
+          <div class="h-1 w-8 bg-black"></div>
+          <div class="h-1 w-8 bg-black"></div>
+          <div class="h-1 w-8 bg-black"></div>
+        </div>
+        <!-- <ul class="sm:hidden">
+          <li><a href="#">home</a></li>
+          <li><a href="#">product</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul> -->
+        <ul
+          id="nav-list"
+          class="sm:h-full sm:justify-end hidden sm:flex sm:flex-row sm:items-center sm:w-auto sm:relative text-lg"
+        >
+          <li class="text-md sm:py-0 py-5 h-full hover:bg-gray-500">
+            <a
+              href="#"
+              class="h-full hover:text-blue-50 flex justify-center items-center px-5"
+            >
+              home</a
+            >
+          </li>
+          <li class="text-md sm:py-0 py-5 h-full hover:bg-gray-500">
+            <a
+              href="#"
+              class="h-full hover:text-blue-50 flex justify-center items-center px-5"
+            >
+              product</a
+            >
+          </li>
+          <li class="text-md sm:py-0 py-5 h-full hover:bg-gray-500">
+            <a
+              href="#"
+              class="h-full hover:text-blue-50 flex justify-center items-center px-5"
+            >
+              about us</a
+            >
+          </li>
+          <li class="text-md sm:py-0 py-5 h-full hover:bg-gray-500">
+            <a
+              href="#"
+              class="h-full hover:text-blue-50 flex justify-center items-center px-5"
+            >
+              contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <script>
+      let menu_icon = document.querySelector("#menu-icon"); // menu icon
+      let nav_list = document.querySelector("#nav-list"); // navigation links list
+
+      function toggleMenu() {
+        let arr = []; // classlist array
+        nav_list.classList.forEach((item) => arr.push(item)); // creates a new array from classlist
+
+        if (arr.includes("hidden")) {
+          nav_list.classList.remove("hidden", "h-full");
+          arr.filter((i) => i != "hidden");
+          nav_list.classList.add(
+            "flex",
+            "flex-col",
+            "absolute",
+            "left-0",
+            "w-screen"
+          );
+        } else {
+          nav_list.classList.add("hidden");
+          arr.push("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>
